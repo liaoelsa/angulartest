@@ -1,1 +1,8 @@
-<p>search works!</p>
+<div class="search">
+        <input type="text" [(ngModel)]="keyword" />
+        <button (click)="doSearch()">Search</button>
+        <hr>
+        <ul>
+                        <li *ngFor="let item of searchList; let key=index;">{{item}}   ------ <button (click)="onDelete(key)">delete</button></li>
+        </ul>
+</div>

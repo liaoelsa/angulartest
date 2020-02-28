@@ -26,6 +26,6 @@ import { SearchComponent } from './component/search/search.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [FormComponent]
+  bootstrap: [SearchComponent]
 })
 export class AppModule { }
