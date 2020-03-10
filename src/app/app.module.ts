@@ -10,6 +10,8 @@ import { HeaderComponent } from './component/header/header.component';
 import { FormComponent } from './component/form/form.component';
 import { SearchComponent } from './component/search/search.component';
 import { TodolistComponent } from './component/todolist/todolist.component';
+import { StorageService } from './service/storage.service'
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ import { TodolistComponent } from './component/todolist/todolist.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [StorageService],
   bootstrap: [TodolistComponent]
 })
 export class AppModule { }

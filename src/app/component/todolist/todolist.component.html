@@ -5,13 +5,13 @@
         <h3>待办事项</h3>
         <ul>
                 <li *ngFor="let item of todoList; let key=index;" [hidden]="item.status==1">
-                        <input type="checkbox" [(ngModel)]="item.status" />{{item.title}}   ------ <button (click)="onDelete(key)">x</button>
+                        <input type="checkbox" [(ngModel)]="item.status" (change)="checkboxChanged()" />{{item.title}}   ------ <button (click)="onDelete(key)">x</button>
                 </li>
         </ul>
         <h3>已完成事项</h3>
         <ul>
                 <li *ngFor="let item of todoList; let key=index;" [hidden]="item.status==0">
-                        <input type="checkbox" [(ngModel)]="item.status" />{{item.title}}   ------ <button (click)="onDelete(key)">x</button>
+                        <input type="checkbox" [(ngModel)]="item.status" (change)="checkboxChanged()" />{{item.title}}   ------ <button (click)="onDelete(key)">x</button>
                 </li>
         </ul>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from '../../service/storage.service'
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-todolist',
@@ -8,10 +10,17 @@ import { Component, OnInit } from '@angular/core';
 export class TodolistComponent implements OnInit {
   private todoList:any[] = []
   private keyword:string
+  private KEY:string = 'todolist'
 
-  constructor() { }
+  constructor(public storageService:StorageService) {
+   }
 
   ngOnInit() {
+    console.log('refresh')
+    let todolist = this.storageService.get(this.KEY)
+    if(todolist){
+      this.todoList = todolist
+    }
   }
 
   doAdd(e){
@@ -21,6 +30,7 @@ export class TodolistComponent implements OnInit {
           title:this.keyword,
           status:0
         })
+        this.storageService.set(this.KEY,this.todoList)
       }else{
         alert("key word existing:" + this.keyword)
       }
@@ -44,6 +54,10 @@ export class TodolistComponent implements OnInit {
 
   onDelete(key){
     this.todoList.splice(key,1)
+  }
+
+  checkboxChanged(){
+    this.storageService.set(this.KEY,this.todoList)
   }
 
 }
