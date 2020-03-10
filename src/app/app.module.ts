@@ -9,6 +9,7 @@ import { HomeComponentComponent } from './component/home-component/home-componen
 import { HeaderComponent } from './component/header/header.component';
 import { FormComponent } from './component/form/form.component';
 import { SearchComponent } from './component/search/search.component';
+import { TodolistComponent } from './component/todolist/todolist.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SearchComponent } from './component/search/search.component';
     HeaderComponent,
     FormComponent,
     SearchComponent,
+    TodolistComponent,
   ],
   //引入表单相关的模块后才能用双向数据绑定 - FormsModule
   imports: [
@@ -26,6 +28,6 @@ import { SearchComponent } from './component/search/search.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [SearchComponent]
+  bootstrap: [TodolistComponent]
 })
 export class AppModule { }
