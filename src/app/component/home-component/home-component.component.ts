@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ComponentFactoryResolver } from '@angular/core';
+import { DlHostDirective } from 'src/app/dl-host.directive';
+import { TodolistComponent } from '../todolist/todolist.component';
 
 @Component({
   selector: 'app-home-component',
@@ -9,10 +11,14 @@ export class HomeComponentComponent implements OnInit {
   public message:any="<h3>this is a html</h3>"
   public picUrl:string = 'https://www.baidu.com/img/pc_1c6e30772d5e4103103bd460913332f9.png';
   private testArray: any
-
-  constructor() { }
+  @ViewChild(DlHostDirective,{ static: true }) dlHost: DlHostDirective;
+  constructor(private componentFactoryResolver:ComponentFactoryResolver) { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit(){
+    this.dlHost.viewContainerRef.createComponent(this.componentFactoryResolver.resolveComponentFactory(TodolistComponent))
   }
 
   buttonClick(){
