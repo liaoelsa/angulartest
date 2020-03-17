@@ -14,6 +14,7 @@ import { StorageService } from './service/storage.service'
 import { from } from 'rxjs';
 import { DlHostDirective } from './dl-host.directive';
 import { DynamicTestComponent } from './component/dynamic-test/dynamic-test.component';
+import { AComponent } from './component/a/a.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,11 @@ import { DynamicTestComponent } from './component/dynamic-test/dynamic-test.comp
     TodolistComponent,
     DlHostDirective,
     DynamicTestComponent,
+    AComponent,
   ],
   entryComponents: [
-    TodolistComponent
+    TodolistComponent,
+    AComponent
   ],
   //引入表单相关的模块后才能用双向数据绑定 - FormsModule
   imports: [
