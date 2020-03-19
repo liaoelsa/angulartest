@@ -12,18 +12,27 @@ export class HomeComponentComponent implements OnInit {
   public picUrl:string = 'https://www.baidu.com/img/pc_1c6e30772d5e4103103bd460913332f9.png';
   private testArray: any
   @ViewChild(DlHostDirective,{ static: true }) dlHost: DlHostDirective;
+  @ViewChild('appHeader', { static:true }) header:any
+
+
   constructor(private componentFactoryResolver:ComponentFactoryResolver) { }
 
   ngOnInit() {
   }
 
   ngAfterViewInit(){
-    this.dlHost.viewContainerRef.createComponent(this.componentFactoryResolver.resolveComponentFactory(TodolistComponent))
+    if(this.dlHost){
+      this.dlHost.viewContainerRef.createComponent(this.componentFactoryResolver.resolveComponentFactory(TodolistComponent))
+    }
   }
 
   buttonClick(){
     this.testArray = ["test"]
     console.log(this.testArray.length)
+  }
+
+  getHeaderMethod(){
+    this.header.run()
   }
 
 }

@@ -40,6 +40,6 @@ import { AComponent } from './component/a/a.component';
     FormsModule
   ],
   providers: [StorageService],
-  bootstrap: [DynamicTestComponent]
+  bootstrap: [HomeComponentComponent]
 })
 export class AppModule { }
