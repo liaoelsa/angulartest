@@ -15,6 +15,8 @@ import { from } from 'rxjs';
 import { DlHostDirective } from './dl-host.directive';
 import { DynamicTestComponent } from './component/dynamic-test/dynamic-test.component';
 import { AComponent } from './component/a/a.component';
+import { RequestTestComponent } from './component/request-test/request-test.component';
+import { RequestService } from './service/request.service';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { AComponent } from './component/a/a.component';
     DlHostDirective,
     DynamicTestComponent,
     AComponent,
+    RequestTestComponent,
   ],
   entryComponents: [
     TodolistComponent,
@@ -39,7 +42,7 @@ import { AComponent } from './component/a/a.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [StorageService],
-  bootstrap: [HomeComponentComponent]
+  providers: [StorageService, RequestService],
+  bootstrap: [RequestTestComponent]
 })
 export class AppModule { }
