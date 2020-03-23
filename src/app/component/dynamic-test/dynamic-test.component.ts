@@ -1,6 +1,6 @@
 import { Component, OnInit, ComponentRef, ComponentFactoryResolver, ElementRef, Injector, ApplicationRef } from '@angular/core';
 import { TodolistComponent } from '../todolist/todolist.component';
-import { AComponent } from '../a/a.component';
+import { AComponent } from '../dynamic/a/a.component';
 
 @Component({
   selector: 'app-dynamic-test',

@@ -14,7 +14,7 @@ import { StorageService } from './service/storage.service'
 import { from } from 'rxjs';
 import { DlHostDirective } from './dl-host.directive';
 import { DynamicTestComponent } from './component/dynamic-test/dynamic-test.component';
-import { AComponent } from './component/a/a.component';
+import { AComponent } from './component/dynamic/a/a.component';
 import { RequestTestComponent } from './component/request-test/request-test.component';
 import { RequestService } from './service/request.service';
 
