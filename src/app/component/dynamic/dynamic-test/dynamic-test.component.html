@@ -1,0 +1,25 @@
+<ng-container *ngIf="searchData; else searchEmpty">
+        暂时不能搜索到数据
+</ng-container>
+<ng-template #searchEmpty>
+        开始获取数据
+</ng-template>
+<h2 [appHighlight]="'yellow'">test</h2>
+<h2 [appHighlight]="'orange'">high light me, my backgroud color will change to orange</h2>
+<h2 [appHighlight]>high light me with red color</h2>
+
+<br>
+<br>
+<br>
+
+<h1>My first attribute directive</h1>
+
+<h4>pick a high light color</h4>
+<div>
+        <input type="radio" name="colors" (click)="color='lightgreen'">Green
+        <input type="radio" name="colors" (click)="color='yellow'">yellow
+        <input type="radio" name="colors" (click)="color='cyan'">cyan
+</div>
+<p [appHighlight]="color" [defaultColor]="'violet'">high light me</p>
+<p [appHighlight]="color">high light me</p>
+

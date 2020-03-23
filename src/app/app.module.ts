@@ -13,10 +13,11 @@ import { TodolistComponent } from './component/todolist/todolist.component';
 import { StorageService } from './service/storage.service'
 import { from } from 'rxjs';
 import { DlHostDirective } from './dl-host.directive';
-import { DynamicTestComponent } from './component/dynamic-test/dynamic-test.component';
+import { DynamicTestComponent } from './component/dynamic/dynamic-test/dynamic-test.component';
 import { AComponent } from './component/dynamic/a/a.component';
 import { RequestTestComponent } from './component/request-test/request-test.component';
 import { RequestService } from './service/request.service';
+import { HighlightDirective } from './directive/dynamic/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { RequestService } from './service/request.service';
     DynamicTestComponent,
     AComponent,
     RequestTestComponent,
+    HighlightDirective,
   ],
   entryComponents: [
     TodolistComponent,
@@ -43,6 +45,6 @@ import { RequestService } from './service/request.service';
     FormsModule
   ],
   providers: [StorageService, RequestService],
-  bootstrap: [RequestTestComponent]
+  bootstrap: [DynamicTestComponent]
 })
 export class AppModule { }
