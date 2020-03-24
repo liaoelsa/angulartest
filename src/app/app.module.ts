@@ -18,6 +18,9 @@ import { AComponent } from './component/dynamic/a/a.component';
 import { RequestTestComponent } from './component/request-test/request-test.component';
 import { RequestService } from './service/request.service';
 import { HighlightDirective } from './directive/dynamic/highlight.directive';
+import { ContentProjectionTestComponent } from './component/dynamic/content-projection-test/content-projection-test.component';
+import { LoginFormComponent } from './component/dynamic/login-form/login-form.component';
+import { AuthRememberComponent } from './component/dynamic/auth-remember/auth-remember.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { HighlightDirective } from './directive/dynamic/highlight.directive';
     AComponent,
     RequestTestComponent,
     HighlightDirective,
+    ContentProjectionTestComponent,
+    LoginFormComponent,
+    AuthRememberComponent,
   ],
   entryComponents: [
     TodolistComponent,
@@ -45,6 +51,6 @@ import { HighlightDirective } from './directive/dynamic/highlight.directive';
     FormsModule
   ],
   providers: [StorageService, RequestService],
-  bootstrap: [DynamicTestComponent]
+  bootstrap: [ContentProjectionTestComponent]
 })
 export class AppModule { }

@@ -1,0 +1,16 @@
+<app-login-form (submitted)="onLogin($event)">
+        <h3>登录</h3>
+        <ng-container ngProjectAs="app-auth-remember"><app-auth-remember></app-auth-remember></ng-container>
+        
+        <button type="submit">登录</button>
+</app-login-form>
+<br>
+<br>
+<br>
+
+<app-login-form (submitted)="onRegister($event)">
+        <h3>注册</h3>
+        <app-auth-remember></app-auth-remember>
+        <app-auth-remember></app-auth-remember>
+        <button type="submit">注册</button>
+</app-login-form>
