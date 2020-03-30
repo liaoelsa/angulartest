@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +21,9 @@ import { HighlightDirective } from './directive/dynamic/highlight.directive';
 import { ContentProjectionTestComponent } from './component/dynamic/content-projection-test/content-projection-test.component';
 import { LoginFormComponent } from './component/dynamic/login-form/login-form.component';
 import { AuthRememberComponent } from './component/dynamic/auth-remember/auth-remember.component';
+import { FormTestComponent } from './component/a_form/form-test/form-test.component';
+import { NameEditorComponent } from './component/a_form/name-editor/name-editor.component';
+import { ProfileEditorComponent } from './component/a_form/profile-editor/profile-editor.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,9 @@ import { AuthRememberComponent } from './component/dynamic/auth-remember/auth-re
     ContentProjectionTestComponent,
     LoginFormComponent,
     AuthRememberComponent,
+    FormTestComponent,
+    NameEditorComponent,
+    ProfileEditorComponent,
   ],
   entryComponents: [
     TodolistComponent,
@@ -48,9 +54,10 @@ import { AuthRememberComponent } from './component/dynamic/auth-remember/auth-re
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [StorageService, RequestService],
-  bootstrap: [ContentProjectionTestComponent]
+  bootstrap: [FormTestComponent]
 })
 export class AppModule { }
